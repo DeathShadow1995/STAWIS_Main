@@ -62,3 +62,12 @@ C:\Users\Anton\Documents\arbeit\aSkripten\5-apr\uebungen\schule\StawisTestGrundl
 C:\Users\Anton\Documents\arbeit\aSkripten\5-apr\uebungen\schule\StawisTestGrundlage\Stawis\Stawis\obj\Debug\Stawis.Form1.resources
 C:\Users\Anton\Documents\arbeit\aSkripten\5-apr\uebungen\schule\StawisTestGrundlage\Stawis\Stawis\obj\Debug\Stawis.Properties.Resources.resources
 C:\Users\Anton\Documents\arbeit\aSkripten\5-apr\uebungen\schule\StawisTestGrundlage\Stawis\Stawis\obj\Debug\Stawis.csproj.GenerateResource.Cache
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\bin\Debug\Stawis.exe.config
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\obj\Debug\Stawis.exe
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\bin\Debug\Stawis.exe
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\bin\Debug\Stawis.pdb
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\obj\Debug\Stawis.csprojResolveAssemblyReference.cache
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\obj\Debug\Stawis.Form1.resources
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\obj\Debug\Stawis.Properties.Resources.resources
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\obj\Debug\Stawis.csproj.GenerateResource.Cache
+C:\Users\Rade PC\Documents\GitHub\STAWIS_GruberDurovic_Umleerposition\stawis\Stawis\obj\Debug\Stawis.pdb

@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading  ;
+using System.Threading;
 
 namespace MSRT {
   public class Program {
     private static int port = 8001;
-    private static IPEndPoint remoteEndpoint;
+    private static IPEndPoint remoteEndpointReciever;
+    private static IPEndPoint remoteEndpointSender;
     private static UdpClient client;
     private static int delay = 0;
 
     static void Main(string[] args) {
       Console.WriteLine("Verbinden mit 127.0.0.1");
-      string IP = "127.0.0.1";
+      string IP = "172.16.220.45";
 
-      remoteEndpoint = new IPEndPoint(IPAddress.Parse(IP), port);
-      client = new UdpClient();
+      remoteEndpointReciever = new IPEndPoint(IPAddress.Parse(IP), port);
+      client = new UdpClient(8001);
 
       In.Open("SimForStawis.txt");
       if (!In.Done) {
@@ -32,11 +34,13 @@ namespace MSRT {
           String cmd = In.ReadWord();
           Console.WriteLine("cmd: " + cmd);
  
-          switch (cmd) {
+          switch (cmd) 
+          {
             case "delayinloop": DoDelayInLoop(); break;
             case "delayonestep": DoDelayOneStep(); break;
             case "setladle": DoSetLadlePosition(); break;
             case "move": DoMove(); break;
+            case "movedirect": DoMoveDirect(); break;
             case "order": DoOrder(); break;
             case "desulphready": DoDesulphready(); break;
             case "desulphstart": DoDesulphStart(); break;
@@ -60,6 +64,38 @@ namespace MSRT {
         text = In.ReadLine();
       }
     }
+
+    private static void DoMoveDirect()
+    {
+        getPosition();
+    }
+
+    public static void getPosition()
+    {
+        string msg = String.Format("{0:d2}", 40);
+        Send(msg);
+        while (true)
+        {
+            try
+            {
+                IPEndPoint anyIP = new IPEndPoint(IPAddress.Parse("172.16.220.45"), 0);
+                UdpClient client1 = new UdpClient(8002);
+                byte[] data1 = client1.Receive(ref anyIP);
+                string text1 = Encoding.UTF8.GetString(data1);
+                In.OpenString(text1);
+                int msgNo = In.ReadInt();
+                Debug.WriteLine(msgNo);
+                Debug.WriteLine("FUNKTIONIERT!!!");
+                break;
+            }
+            catch (Exception e) {
+                Debug.WriteLine(e.ToString());
+            }
+        }
+    }
+    
+
+    static void newOrder() { }
     static void DoTappingStart() {
       int station = In.ReadInt();
       string msg = String.Format("{0:d2} {1:d1} {2:d1}", 17, station, 1);
@@ -155,7 +191,7 @@ namespace MSRT {
     static void Send(string msg) {
       byte[] data = Encoding.UTF8.GetBytes(msg);
       try {
-        client.Send(data, data.Length, remoteEndpoint);
+        client.Send(data, data.Length, remoteEndpointReciever);
       } catch (Exception e) { }
     }
   }

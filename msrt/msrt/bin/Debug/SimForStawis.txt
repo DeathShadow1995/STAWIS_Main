@@ -35,6 +35,9 @@ desulphend 1
 delayonestep 1000
 
 // chargierpfanne zur Entschwefelung bewegen
+movedirect 41
+moveEnd 1
+
 move 1 170 0 1
 move 1 110 -1 0
 delayonestep 1000
